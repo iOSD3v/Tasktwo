@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import Combine
 
 @main
 struct Task2App: App {
+    @StateObject var itemConfigs = ItemsConfigs()
+    
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ItemsView().environmentObject(itemConfigs)
         }
     }
 }
